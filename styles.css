@@ -1,0 +1,458 @@
+/* ============================================
+   Kami — ビジュアル重視ブランドLP
+   画像差し替え: 各 .block-visual / .hero__visual 等に
+   background-image: url(images/〇〇.jpg); を追加
+   ============================================ */
+
+:root {
+  --color-bg: #f9f8f5;
+  --color-bg-alt: #f5f4f0;
+  --color-bg-quote: #f2f1ed;
+  --color-text: #2a2926;
+  --color-text-muted: #5a5956;
+  --color-border: rgba(42, 41, 38, 0.08);
+  --color-border-button: rgba(42, 41, 38, 0.35);
+  --font-serif: "Noto Serif JP", serif;
+  --space-unit: 1rem;
+  --space-sm: calc(var(--space-unit) * 2);
+  --space-md: calc(var(--space-unit) * 4);
+  --space-lg: calc(var(--space-unit) * 6);
+  --space-xl: calc(var(--space-unit) * 10);
+  --space-2xl: calc(var(--space-unit) * 14);
+  --space-3xl: calc(var(--space-unit) * 18);
+  --max-width: 42rem;
+  --max-width-narrow: 36rem;
+  --duration: 0.85s;
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 300;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.92;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== Header ========== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  padding: var(--space-md) var(--space-lg);
+  background: linear-gradient(to bottom, rgba(249, 248, 245, 0.85) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 0.85rem;
+  letter-spacing: 0.28em;
+  color: var(--color-text);
+  opacity: 0.9;
+}
+
+/* ========== Hero ========== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero__visual {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-bg-alt);
+  /* プレースホルダー: 差し替え時は下の1行を有効に */
+  /* background-image: url(images/hero-bg.jpg); */
+  background-image: linear-gradient(165deg, #e8e6e0 0%, #f0eeea 40%, #f5f4f0 100%);
+  background-size: cover;
+  background-position: center center;
+  will-change: transform;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(249, 248, 245, 0.4) 0%, rgba(249, 248, 245, 0.6) 100%);
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--space-lg);
+}
+
+.hero__title {
+  margin: 0 0 var(--space-md);
+  font-family: var(--font-serif);
+  font-weight: 200;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  letter-spacing: 0.38em;
+  color: var(--color-text);
+  line-height: 1.15;
+}
+
+.hero__lead {
+  margin: 0;
+  font-weight: 300;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  letter-spacing: 0.14em;
+  color: var(--color-text-muted);
+  max-width: 26rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========== Section common ========== */
+.section {
+  padding: 0;
+}
+
+.section__label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.section__title {
+  margin: 0 0 var(--space-md);
+  font-weight: 400;
+  font-size: clamp(1.35rem, 3vw, 1.7rem);
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.section__body {
+  margin: 0;
+}
+
+.section__body p {
+  margin: 0 0 1.35em;
+  font-weight: 300;
+  font-size: clamp(0.95rem, 1.7vw, 1.05rem);
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.section__body p:last-child {
+  margin-bottom: 0;
+}
+
+.section__body--single {
+  font-size: inherit;
+  letter-spacing: inherit;
+  color: var(--color-text-muted);
+}
+
+/* ========== Concept（画像 + テキスト 交互） ========== */
+.section--concept {
+  background-color: var(--color-bg);
+}
+
+.block--concept {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 85vh;
+}
+
+.block-visual--concept {
+  min-height: 50vh;
+  background-color: var(--color-bg-alt);
+  /* background-image: url(images/concept.jpg); */
+  background-image: linear-gradient(145deg, #e4e2dc 0%, #ebe9e4 50%, #f0eeea 100%);
+  background-size: cover;
+  background-position: center;
+}
+
+.block-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-xl);
+  max-width: var(--max-width);
+}
+
+.block--concept .block-text {
+  margin-left: auto;
+  padding-left: var(--space-2xl);
+}
+
+/* ========== Story（全幅ビジュアル → テキスト） ========== */
+.section--story {
+  background-color: var(--color-bg-alt);
+}
+
+.story__visual {
+  width: 100%;
+  height: 58vh;
+  min-height: 320px;
+  background-color: var(--color-bg);
+  /* background-image: url(images/story-bg.jpg); */
+  background-image: linear-gradient(160deg, #ddd9d2 0%, #e8e5df 35%, #eeebe6 100%);
+  background-size: cover;
+  background-position: center;
+}
+
+.block-text--story {
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg);
+  max-width: var(--max-width);
+}
+
+/* ========== Product ========== */
+.section--product {
+  background-color: var(--color-bg);
+}
+
+.product__visual {
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+  height: 72vh;
+  min-height: 380px;
+  background-color: var(--color-bg-alt);
+  /* background-image: url(images/product.jpg); */
+  background-image: linear-gradient(150deg, #e6e4de 0%, #ebe9e4 45%, #f2f0ec 100%);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.block-text--product {
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg);
+  text-align: center;
+  max-width: var(--max-width-narrow);
+}
+
+/* ========== Philosophy（大きな言葉） ========== */
+.section--philosophy {
+  background-color: var(--color-bg-quote);
+  padding: var(--space-3xl) var(--space-lg);
+}
+
+.philosophy__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.philosophy__quote {
+  margin: 0;
+  font-weight: 300;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  letter-spacing: 0.12em;
+  line-height: 2;
+  color: var(--color-text);
+}
+
+/* ========== CTA ========== */
+.section--cta {
+  background-color: var(--color-bg);
+  padding: var(--space-3xl) var(--space-lg);
+}
+
+.cta__inner {
+  max-width: var(--max-width-narrow);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta__text {
+  margin: 0 0 var(--space-md);
+  font-weight: 300;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.cta__button {
+  display: inline-block;
+  padding: 0.85em 2.2em;
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--color-text);
+  text-decoration: none;
+  border: 1px solid var(--color-border-button);
+  background: transparent;
+  transition: opacity var(--duration) var(--ease), border-color var(--duration) var(--ease);
+}
+
+.cta__button:hover {
+  opacity: 0.78;
+  border-color: var(--color-text-muted);
+}
+
+/* ========== Footer ========== */
+.footer {
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+}
+
+.footer__copy {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  color: var(--color-text-muted);
+}
+
+/* ========== Scroll animation ========== */
+.hero__content,
+.block-visual,
+.block-text,
+.story__visual,
+.block-text--story,
+.product__visual,
+.block-text--product,
+.philosophy__inner,
+.cta__inner {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--duration) var(--ease), transform var(--duration) var(--ease);
+}
+
+.hero.is-visible .hero__content,
+.section.is-visible .hero__content,
+.block.is-visible .block-visual,
+.block.is-visible .block-text,
+.section.is-visible .story__visual,
+.section.is-visible .block-text--story,
+.section.is-visible .product__visual,
+.section.is-visible .block-text--product,
+.section.is-visible .philosophy__inner,
+.section.is-visible .cta__inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section.is-visible .story__visual {
+  transition-delay: 0s;
+}
+
+.section.is-visible .block-text--story {
+  transition-delay: 0.12s;
+}
+
+.block.is-visible .block-text .section__label { transition-delay: 0s; }
+.block.is-visible .block-text .section__title { transition-delay: 0.06s; }
+.block.is-visible .block-text .section__body { transition-delay: 0.12s; }
+
+.block-text--story.is-visible .section__label { transition-delay: 0s; }
+.block-text--story.is-visible .section__title { transition-delay: 0.06s; }
+.block-text--story.is-visible .section__body { transition-delay: 0.12s; }
+
+.section.is-visible .philosophy__quote {
+  transition-delay: 0.08s;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 900px) {
+  .block--concept {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .block-visual--concept {
+    min-height: 45vh;
+    order: 1;
+  }
+
+  .block--concept .block-text {
+    order: 2;
+    margin-left: 0;
+    padding: var(--space-xl) var(--space-md);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --space-xl: calc(var(--space-unit) * 8);
+    --space-2xl: calc(var(--space-unit) * 11);
+    --space-3xl: calc(var(--space-unit) * 14);
+  }
+
+  html {
+    font-size: 17px;
+  }
+
+  .hero__title {
+    letter-spacing: 0.28em;
+  }
+
+  .hero__lead {
+    letter-spacing: 0.1em;
+  }
+
+  .story__visual {
+    height: 50vh;
+    min-height: 280px;
+  }
+
+  .product__visual {
+    height: 60vh;
+    min-height: 300px;
+  }
+
+  .block-text,
+  .block-text--story {
+    padding: var(--space-xl) var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .logo {
+    font-size: 0.8rem;
+    letter-spacing: 0.22em;
+  }
+
+  .hero__title {
+    letter-spacing: 0.2em;
+  }
+
+  .philosophy__quote {
+    letter-spacing: 0.08em;
+  }
+}

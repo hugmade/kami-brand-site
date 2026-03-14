@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kami — 自然に還る。神に還る。本来の自分に還る。</title>
+  <meta name="description" content="Kamiは、日本の自然哲学を、食で表現するブランドです。自然と人間を、食でつなぐ。日本初の神ブランド。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <span class="logo" aria-hidden="true">Kami</span>
+    </header>
+
+    <main>
+      <!-- Hero: 大きなビジュアル + ロゴ/コピー -->
+      <section class="hero" id="hero">
+        <div class="hero__visual" data-visual="hero" role="img" aria-label="Kamiの世界観">
+          <!-- 差し替え: styles.css で .hero__visual { background-image: url(images/hero-bg.jpg); } -->
+        </div>
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <h1 class="hero__title">Kami</h1>
+          <p class="hero__lead">自然に還る。神に還る。本来の自分に還る。</p>
+        </div>
+      </section>
+
+      <!-- Concept: 思想（画像 + テキスト 交互） -->
+      <section class="section section--concept" id="concept">
+        <div class="block block--concept">
+          <div class="block-visual block-visual--concept" data-visual="concept" role="img" aria-label="思想を象徴するイメージ">
+            <!-- 差し替え: .block-visual--concept { background-image: url(images/concept.jpg); } -->
+          </div>
+          <div class="block-text">
+            <span class="section__label">Concept</span>
+            <h2 class="section__title">思想</h2>
+            <div class="section__body">
+              <p>Kamiは、日本の自然哲学を、食で表現するブランドです。</p>
+              <p>私たちが言う「神」は、特定の宗教ではありません。山や水、風や土、稲——自然そのものに、神が宿る。その思想は、古来からこの国にあります。</p>
+              <p>Kamiの使命は、自然と人間を、もう一度つなぐこと。加工と化学に遠ざかった日常に、自然の力を、食を通して届けることです。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story: 背景や物語（全幅ビジュアル → テキスト） -->
+      <section class="section section--story" id="story">
+        <div class="story__visual" data-visual="story" role="img" aria-label="神の国、稲と自然">
+          <!-- 差し替え: .story__visual { background-image: url(images/story-bg.jpg); } -->
+        </div>
+        <div class="block-text block-text--story">
+          <span class="section__label">Story</span>
+          <h2 class="section__title">神の国から、食へ。</h2>
+          <div class="section__body">
+            <p>日本は古来、「神の国」と呼ばれてきました。稲は生命そのものとして尊ばれ、太陽と大地の恵みは、神の食として受け継がれてきました。</p>
+            <p>やがて私たちは、便利さの代わりに、自然から離れました。その一方で、この国には、年間およそ200万トンの籾殻が生まれ、その多くに、まだ眠る力があります。</p>
+            <p>Kamiは、その籾殻に、新しい価値を見出しました。自然が持つ力を、からだが受けとれる形に——。失われたつながりを、食から、静かに取り戻す。それが、Kamiの歩みです。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Product: 製品紹介（ビジュアル → 短いコピー） -->
+      <section class="section section--product" id="product">
+        <div class="product__visual" data-visual="product" role="img" aria-label="Kamiの製品">
+          <!-- 差し替え: .product__visual { background-image: url(images/product.jpg); } または img タグに差し替え -->
+        </div>
+        <div class="block-text block-text--product">
+          <span class="section__label">Product</span>
+          <h2 class="section__title">生命に近い食</h2>
+          <p class="section__body section__body--single">自然が持つ力を、そのまま届ける。それが、Kamiの考え方です。</p>
+        </div>
+      </section>
+
+      <!-- Philosophy: 大きな言葉を見せるセクション -->
+      <section class="section section--philosophy" id="philosophy">
+        <div class="philosophy__inner">
+          <p class="philosophy__quote">自然に還る。<br>神に還る。<br>本来の自分に還る。</p>
+        </div>
+      </section>
+
+      <!-- CTA: 静かな導線 -->
+      <section class="section section--cta" id="cta">
+        <div class="cta__inner">
+          <p class="cta__text">Kamiの世界をもっと知る</p>
+          <a href="#" class="cta__button">お問い合わせ</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__copy">Kami</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
